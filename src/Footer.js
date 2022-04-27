@@ -29,13 +29,9 @@ const Footer = () => {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction
-              component={Link}
-              to="/signal"
-              label="List"
-              value="signal"
-              icon={<List />}
-          />
+          <BottomNavigationAction label="List" icon={<List />} />
+          <BottomNavigationAction label="People" icon={<People />} />
+          <BottomNavigationAction label="Settings" icon={<Settings />} />
         </BottomNavigation>
       </Paper>
     </div>
