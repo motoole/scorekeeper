@@ -1,44 +1,95 @@
-[{
+{
   "gamesData": [
     {
-      "gameId" : 1,
+      "gameId" : 861,
+      "gameType" : [{
+        "name" : "Uno",
+        "type" : "Uno"
+      }],
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
-        {
-          "Tim" : 392,
-          "Stacy" : 241,
-          "Matt" : 42,
-          "Kat" : 121
-        }
+        { "pName" : "Gregory", "pScore" : 15 },
+        { "pName" : "Lucinda", "pScore" : 498 },
+        { "pName" : "Jeff", "pScore" : 475 },
+        { "pName" : "Tom", "pScore" : 196 }
       ],
-      "numRounds" : 5
+      "numRounds" : 1
     },
     {
-      "gameId" : 2,
+      "gameId" : 406,
+      "gameType" : [{
+        "name" : "Uno",
+        "type" : "Uno"
+      }],
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
-        {
-          "Tim" : 141,
-          "Stacy" : 175,
-          "Matt" : 111,
-          "Alison" : 279,
-          "Andrew" : 68
-        }
+        { "pName" : "Francis", "pScore" : 1 },
+        { "pName" : "Stella", "pScore" : 247 },
+        { "pName" : "Sarah", "pScore" : 406 },
+        { "pName" : "Inez", "pScore" : 353 }
       ],
-      "numRounds" : 2      
+      "numRounds" : 2
     },
     {
-      "gameId" : 2,
+      "gameId" : 749,
+      "gameType" : [{
+        "name" : "Uno",
+        "type" : "Uno"
+      }],
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
-        {
-          "Andrew" : 71,
-          "Matt" : 265,
-          "Alison" : 211,
-          "Adam" : 361
-        }
+        { "pName" : "Isaac", "pScore" : 6 },
+        { "pName" : "Henry", "pScore" : 363 },
+        { "pName" : "Virginia", "pScore" : 425 },
+        { "pName" : "Lora", "pScore" : 262 }
       ],
-      "numRounds" : 12
+      "numRounds" : 20
+    },
+    {
+      "gameId" : 546,
+      "gameType" : [{
+        "name" : "Uno",
+        "type" : "Uno"
+      }],
+      "startDate" : "2022-04-28T00:44:41.456Z",
+      "scores" : [
+        { "pName" : "Birdie", "pScore" : 320 },
+        { "pName" : "Ethan", "pScore" : 223 },
+        { "pName" : "Myrtie", "pScore" : 146 },
+        { "pName" : "Nettie", "pScore" : 60 }
+      ],
+      "numRounds" : 7
+    },
+    {
+      "gameId" : 412,
+      "gameType" : [{
+        "name" : "Uno",
+ 
+        "type" : "Uno"
+      }],
+      "startDate" : "2022-04-28T00:44:41.456Z",
+      "scores" : [
+        { "pName" : "Sam", "pScore" : 150 },
+        { "pName" : "Sylvia", "pScore" : 178 },
+        { "pName" : "Matilda", "pScore" : 17 },
+        { "pName" : "Lucas", "pScore" : 177 }
+      ],
+      "numRounds" : 20
+    },
+    {
+      "gameId" : 861,
+      "gameType" : [{
+        "name" : "Uno",
+         "type" : "Uno"
+      }],
+      "startDate" : "2022-04-28T00:44:41.456Z",
+      "scores" : [
+        { "pName" : "Winifred", "pScore" : 368 },
+        { "pName" : "Eric", "pScore" : 370 },
+        { "pName" : "Amy", "pScore" : 212 },
+        { "pName" : "Julia", "pScore" : 295 }
+      ],
+      "numRounds" : 8
     }
   ]
-}]
+}

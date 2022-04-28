@@ -4,6 +4,7 @@ body {
 
 .Header {
   color: red;
+  margin-bottom: 4em;
 }
 
 .Content {
@@ -15,4 +16,5 @@ body {
   margin-top: 50px;
   padding: 10px;
   height: 100vh;
+  margin-bottom: 40vh;
 }

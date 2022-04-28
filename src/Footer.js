@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './App.css';
-// import { useHistory } from 'react-router-dom';
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 // mui components
