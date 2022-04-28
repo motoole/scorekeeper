@@ -1,0 +1,44 @@
+[{
+  "gamesData": [
+    {
+      "gameId" : 1,
+      "startDate" : "2022-04-28T00:44:41.456Z",
+      "scores" : [
+        {
+          "Tim" : 392,
+          "Stacy" : 241,
+          "Matt" : 42,
+          "Kat" : 121
+        }
+      ],
+      "numRounds" : 5
+    },
+    {
+      "gameId" : 2,
+      "startDate" : "2022-04-28T00:44:41.456Z",
+      "scores" : [
+        {
+          "Tim" : 141,
+          "Stacy" : 175,
+          "Matt" : 111,
+          "Alison" : 279,
+          "Andrew" : 68
+        }
+      ],
+      "numRounds" : 2      
+    },
+    {
+      "gameId" : 2,
+      "startDate" : "2022-04-28T00:44:41.456Z",
+      "scores" : [
+        {
+          "Andrew" : 71,
+          "Matt" : 265,
+          "Alison" : 211,
+          "Adam" : 361
+        }
+      ],
+      "numRounds" : 12
+    }
+  ]
+}]
