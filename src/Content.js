@@ -52,7 +52,7 @@ const Content = () => {
             }}>
             <CardContent>
               <Typography variant="h5" component="div">
-              Test {game.gameType['name']}
+              Test - {game.gameType['name']}
                 <Typography variant="div" component="div" sx={{
                   float: 'right',
                   fontSize: 15

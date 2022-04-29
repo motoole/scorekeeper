@@ -2,10 +2,10 @@
   "gamesData": [
     {
       "gameId" : 861,
-      "gameType" : [{
+      "gameType" : {
         "name" : "Uno",
         "type" : "Uno"
-      }],
+      },
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
         { "pName" : "Gregory", "pScore" : 15 },
@@ -17,10 +17,10 @@
     },
     {
       "gameId" : 406,
-      "gameType" : [{
+      "gameType" : {
         "name" : "Uno",
         "type" : "Uno"
-      }],
+      },
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
         { "pName" : "Francis", "pScore" : 1 },
@@ -32,10 +32,10 @@
     },
     {
       "gameId" : 749,
-      "gameType" : [{
+      "gameType" : {
         "name" : "Uno",
         "type" : "Uno"
-      }],
+      },
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
         { "pName" : "Isaac", "pScore" : 6 },
@@ -47,10 +47,10 @@
     },
     {
       "gameId" : 546,
-      "gameType" : [{
+      "gameType" : {
         "name" : "Uno",
         "type" : "Uno"
-      }],
+      },
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
         { "pName" : "Birdie", "pScore" : 320 },
@@ -62,11 +62,10 @@
     },
     {
       "gameId" : 412,
-      "gameType" : [{
+      "gameType" : {
         "name" : "Uno",
- 
         "type" : "Uno"
-      }],
+      },
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
         { "pName" : "Sam", "pScore" : 150 },
@@ -77,11 +76,11 @@
       "numRounds" : 20
     },
     {
-      "gameId" : 861,
-      "gameType" : [{
+      "gameId" : 29,
+      "gameType" : {
         "name" : "Uno",
          "type" : "Uno"
-      }],
+      },
       "startDate" : "2022-04-28T00:44:41.456Z",
       "scores" : [
         { "pName" : "Winifred", "pScore" : 368 },
