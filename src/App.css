@@ -12,9 +12,5 @@ body {
 }
 
 .Content {
-  /* background-color: rgb(193, 189, 179); */
-  margin-top: 50px;
   padding: 10px;
-  height: 100vh;
-  margin-bottom: 40vh;
 }

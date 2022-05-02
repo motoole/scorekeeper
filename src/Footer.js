@@ -6,7 +6,8 @@ import { Routes, Route, Outlet, Link } from "react-router-dom";
 import { 
   Paper,
   BottomNavigation,
-  BottomNavigationAction
+  BottomNavigationAction, 
+  Toolbar
 } from '@mui/material';
 
 // mui icons
@@ -20,6 +21,7 @@ const Footer = () => {
   const [value, setValue] = React.useState(0);
   return (
     <div className="Footer">
+      <Toolbar />
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
           showLabels

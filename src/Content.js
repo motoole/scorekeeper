@@ -13,7 +13,9 @@ import {
   CardActions,
   CardContent,
   Button,
-  IconButton
+  IconButton, 
+  CardMedia,
+  Divider
 } from '@mui/material';
 
 // mui icons
@@ -22,16 +24,19 @@ import {
   People
 } from '@mui/icons-material';
 
-import { unoLogo } from './img/unoLogo.jpg';
+import unoLogo from './img/unoLogo.jpg';
+import shuffLogo from './img/shuffleboard.jpg';
 
 const Content = () => {
-
   const gamesData = data['gamesData'];
+  const handleCardClick = (e) => {}
 
-  console.log(gamesData);
-
-  const handleCardClick = (e) => {
-    console.log(e)
+  const returnGameImg = (x) => {
+    if(x == "Uno") {
+      return unoLogo;
+    } else if(x == "Shuffleboard") {
+      return shuffLogo
+    }
   }
 
   const formatDate = (date) => {
@@ -43,13 +48,22 @@ const Content = () => {
     <div className="Content">
       <Box>
         {
-          gamesData.map(game =>
+          gamesData.map(game => 
           <Card key={game.gameId} 
             onClick={ event => handleCardClick(game) }
             sx={{ 
               minWidth: 275, 
               marginBottom: 3
             }}>
+            <CardMedia
+              component="img"
+              image={returnGameImg(game.gameType['type'])}
+              alt={game.gameType["name"] + game.gameType["type"]}
+              height="60px"
+              sx={{
+
+              }}
+            />
             <CardContent>
               <Typography variant="h5" component="div">
               Test - {game.gameType['name']}
@@ -62,9 +76,11 @@ const Content = () => {
                   }
                 </Typography>
               </Typography>
+
               <Typography variant="p" component="div" sx={{
                 marginTop: '20px'
               }}>
+                <Divider light />
                 <People sx={{
                   position: 'relative',
                   top: '5px',
@@ -92,8 +108,7 @@ const Content = () => {
                 </IconButton>
               </Typography>
             </CardContent>
-            <CardActions>
-            </CardActions>
+
           </Card>
           )
         }

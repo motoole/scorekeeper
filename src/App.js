@@ -19,9 +19,9 @@ const App = () => {
     <ThemeProvider theme={darkTheme}>
       <div className="App">
         <Header />
-        <Container>
+        {/* <Container> */}
           <Content />
-        </Container>
+        {/* </Container> */}
         <Footer />
       </div>
       </ThemeProvider>
