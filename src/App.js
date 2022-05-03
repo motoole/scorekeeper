@@ -2,14 +2,19 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
+// mui imports
+import { Container } from '@mui/material';
+
+//mui styles imports
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-// import Header from './Header.js';
+// component imports
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
-import GamesList from './components/GamesList.js';
+import ListPage from './components/ListPage.js';
 import Players from './components/Players.js';
 import Settings from './components/Settings.js';
+import CreateGame from './components/CreateGame.js';
 
 const App = () => {
   const darkTheme = createTheme({
@@ -22,11 +27,14 @@ const App = () => {
     <ThemeProvider theme={darkTheme}>
       <div className="App">
         <Header />
-        <Routes>
-          <Route path='/' element={<GamesList />} />
-          <Route path='players' element={<Players />} />
-          <Route path='settings' element={<Settings />} />
-        </Routes>
+        <Container>
+          <Routes>
+            <Route path='/' element={<ListPage />} />
+            <Route path='players' element={<Players />} />
+            <Route path='settings' element={<Settings />} />
+            <Route path='createGame' element={<CreateGame />} />
+          </Routes>
+        </Container>
         <Footer />
       </div>
     </ThemeProvider>

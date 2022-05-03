@@ -1,5 +1,11 @@
 body {
   background-color: #282c34;
+  color: #fff;
+}
+
+body a {
+  color: #aaa;
+  text-decoration: none;
 }
 
 .Header {
@@ -14,7 +20,6 @@ body {
 .Content {
   padding: 10px;
 }
-
 
 h1 {
   color: #fff;
