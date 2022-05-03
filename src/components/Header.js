@@ -1,6 +1,4 @@
-import './App.css';
-import { Typography, AppBar, Toolbar } from '@mui/material/'
-
+import { Typography, AppBar } from '@mui/material/'
 
 const Header = () => {
   return (
@@ -10,7 +8,6 @@ const Header = () => {
           ScoreKeeper
         </Typography>
       </AppBar>
-      {/* <Toolbar /> */}
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import * as React from 'react';
-import './App.css';
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 // mui components
 import { 
@@ -12,9 +11,9 @@ import {
 
 // mui icons
 import {
-  List,
-  Settings,
-  People
+  List as ListIcon,
+  Settings as SettingsIcon,
+  People as PlayerIcon
 } from '@mui/icons-material';
 
 const Footer = () => {
@@ -30,9 +29,11 @@ const Footer = () => {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label="List" icon={<List />} />
-          <BottomNavigationAction label="People" icon={<People />} />
-          <BottomNavigationAction label="Settings" icon={<Settings />} />
+          <BottomNavigationAction component={Link} to="/" label="List" icon={<ListIcon />} />
+          <BottomNavigationAction component={Link} to="/players" label="People" icon={<PlayerIcon />} />
+          <BottomNavigationAction component={Link} to="/settings" label="Settings" icon={<SettingsIcon />} />
+
+
         </BottomNavigation>
       </Paper>
     </div>
