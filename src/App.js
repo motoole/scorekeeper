@@ -15,6 +15,7 @@ import ListPage from './components/ListPage.js';
 import Players from './components/Players.js';
 import Settings from './components/Settings.js';
 import CreateGame from './components/CreateGame.js';
+import TestComponent from './components/TestComponent.js';
 
 const App = () => {
   const darkTheme = createTheme({
@@ -28,12 +29,14 @@ const App = () => {
       <div className="App">
         <Header />
         <Container>
+          {/* <TestComponent /> */}
           <Routes>
             <Route path='/' element={<ListPage />} />
             <Route path='players' element={<Players />} />
             <Route path='settings' element={<Settings />} />
             <Route path='createGame' element={<CreateGame />} />
           </Routes>
+
         </Container>
         <Footer />
       </div>

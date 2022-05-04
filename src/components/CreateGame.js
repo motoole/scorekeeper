@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // material ui imports
@@ -12,41 +12,69 @@ import {
   IconButton 
 } from '@mui/material';
 
-import { Close } from '@mui/icons-material';
+import { 
+  Close as CloseIcon, 
+  RemoveCircle as RCIcon
+} from '@mui/icons-material';
 
 const CreateGame = () => {
+  const inputRef = useRef();
   const current = new Date();
 
   const [gameName, setGameName] = useState("");
-  // const [players, setPlayers] = useState("");
-
-  const [playerNames, setPlayerNames] = useState([{ player: '' }])
+  const [playerNames, setPlayerNames] = useState([{ player: ""}])
 
   let handleChange = (i, e) => {
-      console.log(playerNames)
-      let newPlayerNames = [...playerNames];
-      newPlayerNames[i][e.target.player] = e.target.value;
-      setPlayerNames(newPlayerNames);
-    }
+    let newPlayerNames = [...playerNames];
+    newPlayerNames[i][e.target.name] = e.target.value;
+    setPlayerNames(newPlayerNames);
+  }
   
   let addFormFields = () => {
-      setPlayerNames([...playerNames, { player: "" }])
-    }
+    let focusId = "playerName" + [...playerNames].length;
+    setPlayerNames([...playerNames, { player: ""}]);
+
+    // FIX: This isn't right, but works for now
+    setTimeout(() => {
+      document.getElementById(focusId).focus();
+    }, 0);
+  }
   
   let removeFormFields = (i) => {
-      let newPlayerNames = [...playerNames];
-      newPlayerNames.splice(i, 1);
-      setPlayerNames(newPlayerNames)
-  }
-  
-  let handleSubmit = (event) => {
-      event.preventDefault();
-      alert(JSON.stringify(playerNames));
+    let newPlayerNames = [...playerNames];
+    newPlayerNames.splice(i, 1);
+    setPlayerNames(newPlayerNames)
   }
 
-  const handleCreateGame = () =>{
-    console.log(gameName);
-    console.log(JSON.stringify(playerNames));
+  const handleCreateGame = () => {
+    // let ls = JSON.parse(localStorage.getItem('skGamesData'));
+    // let ls = localStorage.getItem('skGamesData');
+ 
+    // console.log(gameName);
+    // console.log(JSON.stringify(playerNames));
+    // console.log(current.toLocaleDateString());
+
+    // let gameCreateData = [
+    //   { 
+    //     'id' : ls === null ? 0 : ls.length,
+    //     'data' : [
+    //       { 
+    //         'sDate' : current.toLocaleDateString(), 
+    //         'sTime' : current.toLocaleTimeString(), 
+    //         'active' : true
+    //       }
+    //     ]
+    // }];
+
+    // let gameCreateData = {'id': ls == null ? 0 : ls.length};
+
+    // console.log('gameCreateData');
+    // console.log(gameCreateData);
+    // console.log('ls');
+    // console.log(ls);
+    // console.log(ls == null ? 0 : ls.length);
+
+    // localStorage.setItem('skGamesData', JSON.stringify(gameCreateData));
   }
 
   return(
@@ -55,7 +83,7 @@ const CreateGame = () => {
         <Typography variant="h5" component="div">
           New Game
           <IconButton aria-label="cancel" color="primary" component={Link} to="/" sx={{ float: 'right' }}>
-            <Close />
+            <CloseIcon />
           </IconButton>
         </Typography>
         <Divider sx={{ margin: '20px 0' }} />
@@ -70,21 +98,12 @@ const CreateGame = () => {
             sx={{ width: '100%'}} 
           />
         </Typography>
-        
-        {/* <Typography component="div" variant="div" sx={{ margin: '20px 0' }}>
-          <TextField 
-            id="createGamePlayers" 
-            label="Players" 
-            variant="filled" 
-            sx={{ width: '100%'}} 
-            value={players} 
-            onChange={(e) => {setPlayers(e.target.value)}}
-          />
-        </Typography> */}
+
         {playerNames.map((element, index) => (
           <div key={index}>
             <Typography component="div" variant="div" sx={{ margin: '20px 0' }}>
               <TextField 
+                id={'playerName' + index} 
                 label={"Player Name"} 
                 variant="filled" 
                 sx={{ width: '100%'}} 
@@ -94,12 +113,17 @@ const CreateGame = () => {
               />
               {
                 index ? 
-                  <button type="button"  className="button remove" onClick={() => removeFormFields(index)}>Remove</button> 
+                  <IconButton aria-label="cancel" color="primary" onClick={() => removeFormFields(index)} sx={{ 
+                    float: 'right', 
+                    top: '-45px'
+                  }}>
+                    <RCIcon />
+                  </IconButton>
                 : null
               }
             </Typography>
           </div>
-        // <input type="text" name="player" value={element.player || ""} onChange={e => handleChange(index, e)} />
+
         ))}
         <Typography component="div" variant="div" sx={{ margin: '20px 0' }}>
           <Stack spacing={2} direction="row" justifyContent="space-between">
