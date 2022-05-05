@@ -90,7 +90,7 @@ const CreateGame = () => {
 
     ls.gamesData = [...ls.gamesData, createGameData];
     console.log(ls.gamesData);
-    // localStorage.setItem('skGamesData', JSON.stringify(ls));
+    localStorage.setItem('skGamesData', JSON.stringify(ls));
   }
 
   return(
