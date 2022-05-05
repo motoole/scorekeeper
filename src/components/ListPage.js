@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ListGames from './ListGames.js';
 
 const ListPage = () => {
-  const hasGames = () => { return localStorage.getItem('scorekeeperData'); }
+  const hasGames = () => { return localStorage.getItem('skGamesData'); }
 
   if (hasGames()) {
     return(

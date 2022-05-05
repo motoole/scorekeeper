@@ -18,11 +18,8 @@ import {
 } from '@mui/icons-material';
 
 const CreateGame = () => {
-  const inputRef = useRef();
-  const current = new Date();
-
-  const [gameName, setGameName] = useState("");
-  const [playerNames, setPlayerNames] = useState([{ player: ""}])
+  const [gameName, setGameName] = useState('');
+  const [playerNames, setPlayerNames] = useState([{ player: ''}])
 
   let handleChange = (i, e) => {
     let newPlayerNames = [...playerNames];
@@ -32,7 +29,7 @@ const CreateGame = () => {
   
   let addFormFields = () => {
     let focusId = "playerName" + [...playerNames].length;
-    setPlayerNames([...playerNames, { player: ""}]);
+    setPlayerNames([...playerNames, { player: ''}]);
 
     // FIX: This isn't right, but works for now
     setTimeout(() => {
@@ -46,35 +43,54 @@ const CreateGame = () => {
     setPlayerNames(newPlayerNames)
   }
 
+  let formatPlayers = () => {
+    let playerArr = [];
+
+    playerNames.forEach(name => {
+      playerArr.push({ "pName" : name.player, "pScore" : 0 });
+    });
+
+    return playerArr;
+  }
+
+  let validateInputs = () => {
+    let validForm = false;
+
+    if(gameName.length !== 0 && playerNames[playerNames.length -1].player.length !== 0) {
+      validForm = true;
+    }
+
+    return validForm;
+  };
+
   const handleCreateGame = () => {
-    // let ls = JSON.parse(localStorage.getItem('skGamesData'));
-    // let ls = localStorage.getItem('skGamesData');
- 
-    // console.log(gameName);
-    // console.log(JSON.stringify(playerNames));
-    // console.log(current.toLocaleDateString());
+    // default localStorage object: {"gamesData":[]}
 
-    // let gameCreateData = [
-    //   { 
-    //     'id' : ls === null ? 0 : ls.length,
-    //     'data' : [
-    //       { 
-    //         'sDate' : current.toLocaleDateString(), 
-    //         'sTime' : current.toLocaleTimeString(), 
-    //         'active' : true
-    //       }
-    //     ]
-    // }];
+    // validate inputs first
+    // should probably apply to the button to prevent getting here in the first place
+    if(!validateInputs()) {
+      return false;
+    }
 
-    // let gameCreateData = {'id': ls == null ? 0 : ls.length};
+    // FIX: need to add check for localStorage of skGamesData and set up default if it's missing
+    let ls = JSON.parse(localStorage.getItem('skGamesData'));
+    let date = new Date();
 
-    // console.log('gameCreateData');
-    // console.log(gameCreateData);
-    // console.log('ls');
-    // console.log(ls);
-    // console.log(ls == null ? 0 : ls.length);
+    let createGameData = {
+      "gameId" : ls.gamesData.length,
+      "gameType" : {
+        "name" : gameName,
+        "type" : "gameType"
+      },
+      "startDate" : date.toISOString(),
+      "endDate" : "",
+      "scores" : formatPlayers(),
+      "numRounds" : 0
+    };
 
-    // localStorage.setItem('skGamesData', JSON.stringify(gameCreateData));
+    ls.gamesData = [...ls.gamesData, createGameData];
+    console.log(ls.gamesData);
+    // localStorage.setItem('skGamesData', JSON.stringify(ls));
   }
 
   return(
