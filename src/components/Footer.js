@@ -6,18 +6,21 @@ import {
   Paper,
   BottomNavigation,
   BottomNavigationAction, 
-  Toolbar
+  Toolbar,
+  IconButton
 } from '@mui/material';
 
 // mui icons
 import {
   List as ListIcon,
   Settings as SettingsIcon,
-  People as PlayerIcon
+  People as PlayerIcon, 
+  AddCircle as AddIcon
 } from '@mui/icons-material';
 
 const Footer = () => {
   const [value, setValue] = React.useState(0);
+  
   return (
     <div className="Footer">
       <Toolbar />
@@ -30,8 +33,13 @@ const Footer = () => {
           }}
         >
           <BottomNavigationAction component={Link} to="/" label="List" icon={<ListIcon />} />
+          <BottomNavigationAction component={Link} to="/createGame" label="" icon={<AddIcon />} 
+            sx={{
+              position: 'relative',
+              top: '-20px'
+            }}
+          />
           <BottomNavigationAction component={Link} to="/players" label="People" icon={<PlayerIcon />} />
-          <BottomNavigationAction component={Link} to="/settings" label="Settings" icon={<SettingsIcon />} />
 
 
         </BottomNavigation>

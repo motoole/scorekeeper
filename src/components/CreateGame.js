@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // material ui imports
 import { 
@@ -19,7 +19,8 @@ import {
 
 const CreateGame = () => {
   const [gameName, setGameName] = useState('');
-  const [playerNames, setPlayerNames] = useState([{ player: ''}])
+  const [playerNames, setPlayerNames] = useState([{ player: ''}]);
+  const navigate = useNavigate();
 
   let handleChange = (i, e) => {
     let newPlayerNames = [...playerNames];
@@ -91,6 +92,7 @@ const CreateGame = () => {
     ls.gamesData = [...ls.gamesData, createGameData];
     console.log(ls.gamesData);
     localStorage.setItem('skGamesData', JSON.stringify(ls));
+    navigate("/");
   }
 
   return(

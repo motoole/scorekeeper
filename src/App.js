@@ -15,6 +15,7 @@ import ListPage from './components/ListPage.js';
 import Players from './components/Players.js';
 import Settings from './components/Settings.js';
 import CreateGame from './components/CreateGame.js';
+import SingleGame from './components/SingleGame.js';
 import TestComponent from './components/TestComponent.js';
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
             <Route path='players' element={<Players />} />
             <Route path='settings' element={<Settings />} />
             <Route path='createGame' element={<CreateGame />} />
+            <Route path='singleGame' element={<SingleGame />} />
           </Routes>
 
         </Container>
